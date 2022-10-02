@@ -1,0 +1,15 @@
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\bin\Debug\net6.0\Week4StructuredText.exe
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\bin\Debug\net6.0\Week4StructuredText.deps.json
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\bin\Debug\net6.0\Week4StructuredText.runtimeconfig.json
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\bin\Debug\net6.0\Week4StructuredText.dll
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\bin\Debug\net6.0\Week4StructuredText.pdb
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.csproj.AssemblyReference.cache
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.AssemblyInfoInputs.cache
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.AssemblyInfo.cs
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.csproj.CoreCompileInputs.cache
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.dll
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\refint\Week4StructuredText.dll
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.pdb
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\Week4StructuredText.genruntimeconfig.cache
+C:\Users\dfmcd\Documents\GitHub\WorkshopResources\Week4StructuredText\obj\Debug\net6.0\ref\Week4StructuredText.dll
