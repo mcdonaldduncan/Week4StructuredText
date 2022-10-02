@@ -29,7 +29,7 @@ namespace Week4StructuredText
             {
                 if (file.LoadError)
                 {
-                    errors.Add(new Error($"File {file.FilePath} has an invalid file extension.", "MyFile() constructor"));
+                    errors.Add(new Error($"File {file.FilePath} has an invalid file extension.", "Parser() => MyFile()"));
                 }
             }
 
@@ -43,7 +43,7 @@ namespace Week4StructuredText
                 return;
             }
 
-            Engine.ProcessFiles(filesToProcess);
+            Engine.ProcessFiles(filesToProcess, errors);
         }
         
     }

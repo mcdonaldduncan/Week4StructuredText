@@ -15,11 +15,13 @@ namespace Week4StructuredText
         /// ProcessFiles takes a list of IDeliminated files and processes each of them sequentially
         /// </summary>
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
-        public static void ProcessFiles(List<IDeliminated> filesToProcess)
+        public static void ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
         {
+            errors = parseErrors;
+            Console.WriteLine("Process Started!");
             for (int i = 0; i < filesToProcess.Count; i++)
             {
-                Dictionary<int, string[]> lines = new Dictionary<int, string[]>(0);
+                Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
                 string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
                 List<string> temp = new List<string>();
                 int lineIndex = 1;
@@ -34,7 +36,6 @@ namespace Week4StructuredText
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        
                         var lineItems = line.Split(filesToProcess[i].Delimiter);
                         lines.Add((lineIndex++), lineItems);
                     }
@@ -52,7 +53,7 @@ namespace Week4StructuredText
 
                 using (StreamWriter sw = new StreamWriter(writePath, true))
                 {
-                    sw.WriteLine($"File Processed at: {DateTime.Now}");
+                    sw.WriteLine($"Processed at: {DateTime.Now}");
                     sw.WriteLine();
                     
                     foreach (var item in lines)
