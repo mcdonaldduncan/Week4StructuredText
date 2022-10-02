@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dfmcd\\Documents\\GitHub\\WorkshopResources\\Week4StructuredText\\Week4StructuredText.csproj",
+      "projectUniqueName": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\Week4StructuredText.csproj",
       "projectName": "Week4StructuredText",
-      "projectPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\WorkshopResources\\Week4StructuredText\\Week4StructuredText.csproj",
+      "projectPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\Week4StructuredText.csproj",
       "packagesPath": "C:\\Users\\dfmcd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\WorkshopResources\\Week4StructuredText\\obj\\",
+      "outputPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dfmcd\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -20,7 +20,7 @@ namespace Week4StructuredText
             for (int i = 0; i < filesToProcess.Count; i++)
             {
                 Dictionary<int, string[]> lines = new Dictionary<int, string[]>(0);
-                string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out.txt");
+                string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
                 List<string> temp = new List<string>();
                 int lineIndex = 1;
 

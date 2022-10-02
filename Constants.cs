@@ -18,12 +18,14 @@ namespace Week4StructuredText
         {
             public static string CSV => ".csv";
             public static string Pipe => ".txt";
+            public static string Text => ".txt";
         }
 
         public sealed class FileDelimiters
         {
             public static string CSV => ",";
             public static string Pipe => "|";
+            public static string Text => " ";
         }
     }
 }
