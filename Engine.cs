@@ -17,66 +17,77 @@ namespace Week4StructuredText
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
         public static void ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
         {
-            errors = parseErrors;
             Console.WriteLine("Process Started!");
-            for (int i = 0; i < filesToProcess.Count; i++)
+            errors = parseErrors;
+            try
             {
-                Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
-                string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
-                List<string> temp = new List<string>();
-                
-
-                if (File.Exists(writePath))
+                for (int i = 0; i < filesToProcess.Count; i++)
                 {
-                    File.Delete(writePath);
-                }
+                    Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
+                    string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
+                    List<string> temp = new List<string>();
 
-                using (StreamReader sr = new StreamReader(filesToProcess[i].FilePath))
-                {
-                    int lineIndex = 1;
-                    while (!sr.EndOfStream)
+
+                    if (File.Exists(writePath))
                     {
-                        // null coalescing operator example derived from in class notes
-                        var lineItems = sr.ReadLine()?.Split(filesToProcess[i].Delimiter) ?? new string[0];
-                        lines.Add((lineIndex++), lineItems);
+                        File.Delete(writePath);
                     }
-                }
 
-                if (hasErrors)
-                {
-                    Console.WriteLine("Process exited with errors!");
-                    foreach (var error in errors)
+                    using (StreamReader sr = new StreamReader(filesToProcess[i].FilePath))
                     {
-                        Console.WriteLine($"Error: {error.ErrorMessage} in {error.Source}");
-                    }
-                    return;
-                }
-
-                using (StreamWriter sw = new StreamWriter(writePath, true))
-                {
-                    sw.WriteLine($"Processed at: {DateTime.Now}");
-                    sw.WriteLine();
-                    
-                    foreach (var item in lines)
-                    {
-                        sw.Write($"Line#{item.Key}: ");
-                        for (int j = 0; j < item.Value.Length; j++)
+                        int lineIndex = 1;
+                        while (!sr.EndOfStream)
                         {
-                            sw.Write($"Field#{j + 1}={item.Value[j]}");
-                            if (!(j + 1 == item.Value.Length))
-                            {
-                                sw.Write(" ==> ");
-                            }
+                            // null coalescing operator example derived from in class notes
+                            var lineItems = sr.ReadLine()?.Split(filesToProcess[i].Delimiter) ?? new string[0];
+                            lines.Add((lineIndex++), lineItems);
                         }
+                    }
+
+                    using (StreamWriter sw = new StreamWriter(writePath, true))
+                    {
+                        sw.WriteLine($"Processed at: {DateTime.Now}");
                         sw.WriteLine();
-                        sw.WriteLine();
+
+                        foreach (var item in lines)
+                        {
+                            sw.Write($"Line#{item.Key}: ");
+                            for (int j = 0; j < item.Value.Length; j++)
+                            {
+                                sw.Write($"Field#{j + 1}={item.Value[j]}");
+                                if (!(j + 1 == item.Value.Length))
+                                {
+                                    sw.Write(" ==> ");
+                                }
+                            }
+                            sw.WriteLine();
+                            sw.WriteLine();
+                        }
                     }
                 }
             }
+            catch (IOException ioe)
+            {
+                errors.Add(new Error(ioe.Message, ioe.Source));
+            }
+            catch (Exception e)
+            {
+                errors.Add(new Error(e.Message, e.Source));
+            }
+            
             
             if (!hasErrors)
             {
                 Console.WriteLine("Process completed succesfully for all items!");
+            }
+            else
+            {
+                Console.WriteLine("Process exited with errors!");
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Error: {error.ErrorMessage} in {error.Source}");
+                }
+                return;
             }
         }
     }
