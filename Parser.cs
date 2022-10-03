@@ -21,6 +21,8 @@ namespace Week4StructuredText
         /// <param name="fileNames">string names of the files that the user wants to parse</param>
         public Parser(List<string> fileNames)
         {
+            Console.WriteLine("Process Started!");
+
             foreach (var name in fileNames)
             {
                 filesToProcess.Add(new MyFile(name));
@@ -36,7 +38,7 @@ namespace Week4StructuredText
 
             if (hasErrors)
             {
-                Console.WriteLine("Process Exiting due to errors.");
+                Console.WriteLine("Process exited with errors.");
                 foreach (var error in errors)
                 {
                     Console.WriteLine($"Error: {error.ErrorMessage} in {error.Source}");

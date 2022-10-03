@@ -17,7 +17,7 @@ namespace Week4StructuredText
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
         public static List<Error> ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
         {
-            Console.WriteLine("Process Started!");
+            
             errors = parseErrors;
             try
             {
@@ -75,7 +75,6 @@ namespace Week4StructuredText
             }
 
             return errors;
-            
         }
     }
 }
