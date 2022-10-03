@@ -15,7 +15,7 @@ namespace Week4StructuredText
         /// ProcessFiles takes a list of IDeliminated files and processes each of them sequentially
         /// </summary>
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
-        public static void ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
+        public static List<Error> ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
         {
             Console.WriteLine("Process Started!");
             errors = parseErrors;
@@ -26,7 +26,6 @@ namespace Week4StructuredText
                     Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
                     string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
                     List<string> temp = new List<string>();
-
 
                     if (File.Exists(writePath))
                     {
@@ -74,21 +73,9 @@ namespace Week4StructuredText
             {
                 errors.Add(new Error(e.Message, e.Source));
             }
+
+            return errors;
             
-            
-            if (!hasErrors)
-            {
-                Console.WriteLine("Process completed succesfully for all items!");
-            }
-            else
-            {
-                Console.WriteLine("Process exited with errors!");
-                foreach (var error in errors)
-                {
-                    Console.WriteLine($"Error: {error.ErrorMessage} in {error.Source}");
-                }
-                return;
-            }
         }
     }
 }

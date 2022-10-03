@@ -10,6 +10,7 @@ namespace Week4StructuredText
     {
         List<IDeliminated> filesToProcess = new List<IDeliminated>();
         List<Error> errors = new List<Error>();
+        List<Error> engineErrors = new List<Error>();
 
         bool hasErrors => errors.Any();
 
@@ -43,7 +44,20 @@ namespace Week4StructuredText
                 return;
             }
 
-            Engine.ProcessFiles(filesToProcess, errors);
+            errors = Engine.ProcessFiles(filesToProcess, errors);
+
+            if(!hasErrors)
+            {
+                Console.WriteLine("Process completed succesfully for all items!");
+            }
+            else
+            {
+                Console.WriteLine("Process exited with errors!");
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Error: {error.ErrorMessage} in {error.Source}");
+                }
+            }
         }
         
     }
