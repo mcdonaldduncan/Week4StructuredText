@@ -24,7 +24,7 @@ namespace Week4StructuredText
                 Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
                 string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
                 List<string> temp = new List<string>();
-                int lineIndex = 1;
+                
 
                 if (File.Exists(writePath))
                 {
@@ -33,10 +33,11 @@ namespace Week4StructuredText
 
                 using (StreamReader sr = new StreamReader(filesToProcess[i].FilePath))
                 {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
+                    int lineIndex = 1;
+                    while (!sr.EndOfStream)
                     {
-                        var lineItems = line.Split(filesToProcess[i].Delimiter);
+                        // null coalescing operator example derived from in class notes
+                        var lineItems = sr.ReadLine()?.Split(filesToProcess[i].Delimiter) ?? new string[0];
                         lines.Add((lineIndex++), lineItems);
                     }
                 }
