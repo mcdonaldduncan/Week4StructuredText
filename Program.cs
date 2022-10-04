@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            List<string> newFiles = new List<string>() { Constants.File1, Constants.File2 };
-            Parser parser = new Parser(newFiles);
+            Parser parser = new Parser();
         }
     }
 }

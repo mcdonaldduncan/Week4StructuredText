@@ -15,17 +15,14 @@ namespace Week4StructuredText
         /// ProcessFiles takes a list of IDeliminated files and processes each of them sequentially
         /// </summary>
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
-        public static List<Error> ProcessFiles(List<IDeliminated> filesToProcess, List<Error> parseErrors)
+        public static List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
         {
-            
-            errors = parseErrors;
             try
             {
                 for (int i = 0; i < filesToProcess.Count; i++)
                 {
                     Dictionary<int, string[]> lines = new Dictionary<int, string[]>();
                     string writePath = filesToProcess[i].FilePath.Replace(filesToProcess[i].Extension, $"_out{Constants.FileExtensions.Text}");
-                    List<string> temp = new List<string>();
 
                     if (File.Exists(writePath))
                     {
@@ -37,7 +34,6 @@ namespace Week4StructuredText
                         int lineIndex = 1;
                         while (!sr.EndOfStream)
                         {
-                            // null coalescing operator example derived from in class notes
                             var lineItems = sr.ReadLine()?.Split(filesToProcess[i].Delimiter) ?? new string[0];
                             lines.Add((lineIndex++), lineItems);
                         }

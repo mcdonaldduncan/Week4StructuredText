@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qIIeN5pY5ZLlUpRZiqwzrtvpq2zmamPzKuRGsms+zcBNgOo000Ymrx+xsAlckwjEqp/igSfxvJ94wBnge94aiQ==",
+  "dgSpecHash": "tk1gOZbz0IAj46XFli+dEVtcygyVxOZQcfkNWxADEq1PYy8XtdgAxjkgeku6asRWaZ8Pht2qfGrXuyIt9JFEYw==",
   "success": true,
-  "projectFilePath": "D:\\GitHubD\\Week4StructuredText\\Week4StructuredText.csproj",
+  "projectFilePath": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\Week4StructuredText.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dfmcd98\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\dfmcd\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
