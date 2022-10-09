@@ -36,6 +36,7 @@ namespace Week4StructuredText.Engines
                         {
                             sw.WriteLine($"Processed at: {DateTime.Now}");
                             sw.WriteLine();
+
                             sw.WriteLine($"Name: {newStudent.LastName}, {newStudent.FirstName}");
                             sw.WriteLine(newStudent.IsEnrolled ? "Student is currently enrolled." : "Student is not enrolled");
                             sw.WriteLine($"Student enrolled for {newStudent.YearsEnrolled} years.");
