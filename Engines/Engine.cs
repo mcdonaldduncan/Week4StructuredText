@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week4StructuredText.Constant;
+using Week4StructuredText.Parsing;
 
-namespace Week4StructuredText
+namespace Week4StructuredText.Engines
 {
-    internal class Engine
+    internal abstract class Engine
     {
-        static List<Error> errors = new List<Error>();
-        static bool hasErrors => errors.Any();
-        
+        List<Error> errors = new List<Error>();
+        bool hasErrors => errors.Any();
+
         /// <summary>
         /// ProcessFiles takes a list of IDeliminated files and processes each of them sequentially
         /// </summary>
         /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
-        public static List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
+        public virtual List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
         {
             try
             {
@@ -35,7 +37,7 @@ namespace Week4StructuredText
                         while (!sr.EndOfStream)
                         {
                             var lineItems = sr.ReadLine()?.Split(filesToProcess[i].Delimiter) ?? new string[0];
-                            lines.Add((lineIndex++), lineItems);
+                            lines.Add(lineIndex++, lineItems);
                         }
                     }
 

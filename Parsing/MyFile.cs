@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week4StructuredText.Constant;
 
-namespace Week4StructuredText
+namespace Week4StructuredText.Parsing
 {
     internal class MyFile : IDeliminated
     {
@@ -29,6 +30,18 @@ namespace Week4StructuredText
             {
                 Delimiter = Constants.FileDelimiters.CSV;
                 Extension = Constants.FileExtensions.CSV;
+                error = false;
+            }
+            else if (fileName.EndsWith(Constants.FileExtensions.JSON))
+            {
+                Delimiter = Constants.FileDelimiters.JSON;
+                Extension = Constants.FileExtensions.JSON;
+                error = false;
+            }
+            else if (fileName.EndsWith(Constants.FileExtensions.XML))
+            {
+                Delimiter = Constants.FileDelimiters.XML;
+                Extension = Constants.FileExtensions.XML;
                 error = false;
             }
             else

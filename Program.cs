@@ -1,4 +1,6 @@
-﻿namespace Week4StructuredText
+﻿using Week4StructuredText.Parsing;
+
+namespace Week4StructuredText
 {
     internal class Program
     {

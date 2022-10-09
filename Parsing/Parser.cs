@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week4StructuredText.Constant;
+using Week4StructuredText.Engines;
 
-namespace Week4StructuredText
+namespace Week4StructuredText.Parsing
 {
     internal class Parser
     {
@@ -42,10 +44,23 @@ namespace Week4StructuredText
                 }
                 return;
             }
+            List<IDeliminated> DeliminatedToProcess = filesToProcess.Where(x => x.Extension == Constants.FileDelimiters.Pipe || x.Extension == Constants.FileDelimiters.CSV).ToList();
+            List<IDeliminated> JSONToProcess = filesToProcess.Where(x => x.Extension == Constants.FileExtensions.JSON).ToList();
+            List<IDeliminated> XMLToProcess = filesToProcess.Where(x => x.Extension == Constants.FileExtensions.XML).ToList();
 
-            errors = Engine.ProcessFiles(filesToProcess);
+            Engine engine;
 
-            if(!hasErrors)
+            engine = new DelimiterEngine();
+            errors.AddRange(engine.ProcessFiles(DeliminatedToProcess));
+
+            engine = new JSONEngine();
+            errors.AddRange(engine.ProcessFiles(JSONToProcess));
+
+            engine = new XMLEngine();
+            errors.AddRange(engine.ProcessFiles(XMLToProcess));
+
+
+            if (!hasErrors)
             {
                 Console.WriteLine("Process completed succesfully for all items!");
             }
@@ -63,6 +78,6 @@ namespace Week4StructuredText
         {
             return Directory.GetFiles(Constants.directoryPath).Where(x => !x.EndsWith("_out.txt")).ToList();
         }
-        
+
     }
 }
