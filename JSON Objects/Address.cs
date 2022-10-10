@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
+﻿
 namespace Week4StructuredText.Objects
 {
-    internal class Address
+    internal sealed class Address : Printable
     {
-        public string StreetAddress;
+        public string StreetAddress { get; set; }
 
-        public string City;
+        public string City { get; set; }
 
-        public string State;
+        public string State { get; set; }
 
-        public string PostalCode;
+        public string PostalCode { get; set; }
 
-        public string ReturnString()
+        public override string ReturnString()
         {
-            return $"Primary Adress: {StreetAddress}, {City}, {State}, {PostalCode}";
+            return $"{StreetAddress}, {City}, {State}, {PostalCode}";
         }
     }
 }

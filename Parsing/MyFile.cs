@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Week4StructuredText.Constant;
 
 namespace Week4StructuredText.Parsing
 {
-    internal class MyFile : IDeliminated
+    internal sealed class MyFile : IDeliminated
     {
         public string Delimiter { get; set; }
         public string FilePath { get; set; }

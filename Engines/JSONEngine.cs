@@ -1,22 +1,19 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Week4StructuredText.Constant;
 using Week4StructuredText.Objects;
-using Week4StructuredText.Parsing;
 
 namespace Week4StructuredText.Engines
 {
-    internal class JSONEngine : Engine
+    internal sealed class JSONEngine : Engine
     {
-        List<Error> errors = new List<Error>();
-        bool hasErrors => errors.Any();
-
+        /// <summary>
+        /// ProcessFiles takes a list of IDeliminated files with JSON extension and processes each of them sequentially
+        /// </summary>
+        /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructor</param>
+        /// <returns errors>List of errors while processing</returns>
         public override List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
         {
+            List<Error> errors = new List<Error>();
             try
             {
                 foreach (var file in filesToProcess)
@@ -36,16 +33,7 @@ namespace Week4StructuredText.Engines
                         {
                             sw.WriteLine($"Processed at: {DateTime.Now}");
                             sw.WriteLine();
-
-                            sw.WriteLine($"Name: {newStudent.LastName}, {newStudent.FirstName}");
-                            sw.WriteLine(newStudent.IsEnrolled ? "Student is currently enrolled." : "Student is not enrolled");
-                            sw.WriteLine($"Student enrolled for {newStudent.YearsEnrolled} years.");
-                            sw.WriteLine($"Primary Adress: {newStudent.Address1.ReturnString()}");
-                            sw.WriteLine(newStudent.Address2 == null ? "No secondary address" : $"Secondary Adress: {newStudent.Address2.ReturnString()}");
-                            for (int i = 0; i < newStudent.PhoneNumbers.Count; i++)
-                            {
-                                sw.WriteLine($"Phone Number {i + 1}: {newStudent.PhoneNumbers[i].Number} | {newStudent.PhoneNumbers[i].Type} | Can Contact: {(newStudent.PhoneNumbers[i].CanContact ? "Yes" : "No")}");
-                            }
+                            sw.Write(newStudent.ReturnString());
                         }
                     }
                 }

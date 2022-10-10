@@ -1,9 +1,9 @@
-Processed at: 10/9/2022 6:05:59 PM
+Processed at: 10/9/2022 8:45:29 PM
 
 Name: Doe, John
 Student is currently enrolled.
-Student enrolled for 2 years.
-Primary Adress: Primary Adress: 916 S. Wabash, Chicago, IL, 60000
-No secondary address
+Student enrolled for 2 years
+Primary Address: 916 S. Wabash, Chicago, IL, 60000
+Secondary Address: No secondary address
 Phone Number 1: 999-123-1234 | Mobile | Can Contact: Yes
 Phone Number 2: 999-789-6789 | Home | Can Contact: Yes

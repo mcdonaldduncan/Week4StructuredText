@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Week4StructuredText.Constant;
+﻿using Week4StructuredText.Constant;
 using Week4StructuredText.Engines;
 
 namespace Week4StructuredText.Parsing
 {
-    internal class Parser
+    internal sealed class Parser
     {
         List<IDeliminated> filesToProcess = new List<IDeliminated>();
         List<Error> errors = new List<Error>();

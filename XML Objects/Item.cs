@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Week4StructuredText.XML_Objects
 {
     [XmlRoot("item")]
-    public class Item
+    public sealed class Item
     {
         [XmlElement("name")]
-        public string Name;
+        public string Name { get; set; }
 
         [XmlElement("price")]
-        public string Price;
+        public string Price { get; set; }
 
         [XmlElement("uom")]
-        public string UnitOfMeasurement;
+        public string UnitOfMeasurement { get; set; }
     }
 }

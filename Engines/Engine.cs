@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Week4StructuredText.Constant;
-using Week4StructuredText.Parsing;
+﻿using Week4StructuredText.Constant;
 
 namespace Week4StructuredText.Engines
 {
     internal abstract class Engine
     {
-        List<Error> errors = new List<Error>();
-        bool hasErrors => errors.Any();
-
         /// <summary>
-        /// ProcessFiles takes a list of IDeliminated files and processes each of them sequentially
+        /// ProcessFiles takes a list of IDeliminated files with Pipe(txt) or csv extension and processes each of them sequentially
         /// </summary>
-        /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructors</param>
+        /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructor</param>
+        /// <returns errors>List of errors while processing</returns>
         public virtual List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
         {
+            List<Error> errors = new List<Error>();
             try
             {
                 for (int i = 0; i < filesToProcess.Count; i++)

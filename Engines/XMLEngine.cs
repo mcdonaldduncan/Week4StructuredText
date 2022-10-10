@@ -1,24 +1,19 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using Week4StructuredText.Constant;
-using Week4StructuredText.Objects;
-using Week4StructuredText.Parsing;
 using Week4StructuredText.XML_Objects;
 
 namespace Week4StructuredText.Engines
 {
-    internal class XMLEngine : Engine
+    internal sealed class XMLEngine : Engine
     {
-        List<Error> errors = new List<Error>();
-        bool hasErrors => errors.Any();
-
+        /// <summary>
+        /// ProcessFiles takes a list of IDeliminated files with XML extension and processes each of them sequentially
+        /// </summary>
+        /// <param name="filesToProcess">List of Ideliminated files prepared by the parser and MyFile constructor</param>
+        /// <returns errors>List of errors while processing</returns>
         public override List<Error> ProcessFiles(List<IDeliminated> filesToProcess)
         {
+            List<Error> errors = new List<Error>();
             try
             {
                 foreach (var file in filesToProcess)
@@ -39,10 +34,7 @@ namespace Week4StructuredText.Engines
                         {
                             sw.WriteLine($"Processed at: {DateTime.Now}");
                             sw.WriteLine();
-                            for (int i = 0; i < marketInventory.Items.Count; i++)
-                            {
-                                sw.WriteLine($"Item#{i + 1}: {marketInventory.Items[i].Name} ==> {marketInventory.Items[i].Price}/{marketInventory.Items[i].UnitOfMeasurement}");
-                            }
+                            sw.Write(marketInventory.ReturnString());
                         }
                     }
                 }

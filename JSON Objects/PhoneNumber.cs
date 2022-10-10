@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
+﻿
 namespace Week4StructuredText.Objects
 {
-    internal class PhoneNumber
+    internal sealed class PhoneNumber : Printable
     {
-        public string Type;
+        public string Type { get; set; }
 
-        public string Number;
+        public string Number { get; set; }
 
-        public bool CanContact;
+        public bool CanContact { get; set; }
+
+        public override string ReturnString()
+        {
+            return $"{Number} | {Type} | Can Contact: {(CanContact ? "Yes" : "No")}\n";
+        }
     }
 }
