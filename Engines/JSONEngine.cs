@@ -27,6 +27,7 @@ namespace Week4StructuredText.Engines
 
                     using (StreamReader sr = new StreamReader(file.FilePath))
                     {
+                        // class example
                         Student newStudent = JsonConvert.DeserializeObject<Student>(sr.ReadToEnd());
 
                         using (StreamWriter sw = new StreamWriter(writePath, true))

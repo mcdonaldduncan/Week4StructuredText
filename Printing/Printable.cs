@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Week4StructuredText
+namespace Week4StructuredText.Printing
 {
     public abstract class Printable
     {

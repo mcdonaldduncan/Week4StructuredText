@@ -1,4 +1,5 @@
 ﻿using System.Xml.Serialization;
+using Week4StructuredText.Printing;
 
 namespace Week4StructuredText.XML_Objects
 {

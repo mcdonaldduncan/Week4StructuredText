@@ -27,6 +27,7 @@ namespace Week4StructuredText.Engines
 
                     using (var fs = File.Open(file.FilePath, FileMode.Open))
                     {
+                        // class example
                         XmlSerializer serializer = new XmlSerializer(typeof(Market));
                         var marketInventory = (Market)serializer?.Deserialize(fs);
 

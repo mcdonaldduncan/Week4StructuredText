@@ -1,4 +1,6 @@
 ﻿
+using Week4StructuredText.Printing;
+
 namespace Week4StructuredText.Objects
 {
     internal sealed class PhoneNumber : Printable

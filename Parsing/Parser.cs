@@ -39,6 +39,7 @@ namespace Week4StructuredText.Parsing
                 }
                 return;
             }
+
             List<IDeliminated> DeliminatedToProcess = filesToProcess.Where(x => x.Extension == Constants.FileDelimiters.Pipe || x.Extension == Constants.FileDelimiters.CSV).ToList();
             List<IDeliminated> JSONToProcess = filesToProcess.Where(x => x.Extension == Constants.FileExtensions.JSON).ToList();
             List<IDeliminated> XMLToProcess = filesToProcess.Where(x => x.Extension == Constants.FileExtensions.XML).ToList();
