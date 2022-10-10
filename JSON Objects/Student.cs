@@ -17,10 +17,6 @@ namespace Week4StructuredText.Objects
 
         public List<PhoneNumber> PhoneNumbers { get; set; }
 
-        /// <summary>
-        /// Organize data into a readable string for writing via a streamwriter
-        /// </summary>
-        /// <returns></returns>
         public override string ReturnString()
         {
             sb.Append($"Name: {LastName}, {FirstName}\n");
