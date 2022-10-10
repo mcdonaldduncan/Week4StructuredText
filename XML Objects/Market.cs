@@ -1,15 +1,17 @@
-﻿using System.Xml.Serialization;
-using Week4StructuredText.Printing;
+﻿using System.Text;
+using System.Xml.Serialization;
 
 namespace Week4StructuredText.XML_Objects
 {
     [XmlRoot("menu")]
-    public sealed class Market : Printable
+    public sealed class Market
     {
         [XmlElement("item")]
         public List<Item> Items { get; set; }
 
-        public override string ReturnString()
+        private StringBuilder sb = new StringBuilder();
+
+        public override string ToString()
         {
             for (int i = 0; i < Items.Count; i++)
             {

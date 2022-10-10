@@ -1,9 +1,7 @@
 ﻿
-using Week4StructuredText.Printing;
-
 namespace Week4StructuredText.Objects
 {
-    internal sealed class PhoneNumber : Printable
+    internal sealed class PhoneNumber
     {
         public string Type { get; set; }
 
@@ -11,7 +9,7 @@ namespace Week4StructuredText.Objects
 
         public bool CanContact { get; set; }
 
-        public override string ReturnString()
+        public override string ToString()
         {
             return $"{Number} | {Type} | Can Contact: {(CanContact ? "Yes" : "No")}\n";
         }

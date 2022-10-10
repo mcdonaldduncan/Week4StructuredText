@@ -1,9 +1,7 @@
 ﻿
-using Week4StructuredText.Printing;
-
 namespace Week4StructuredText.Objects
 {
-    internal sealed class Address : Printable
+    internal sealed class Address
     {
         public string StreetAddress { get; set; }
 
@@ -13,7 +11,7 @@ namespace Week4StructuredText.Objects
 
         public string PostalCode { get; set; }
 
-        public override string ReturnString()
+        public override string ToString()
         {
             return $"{StreetAddress}, {City}, {State}, {PostalCode}";
         }

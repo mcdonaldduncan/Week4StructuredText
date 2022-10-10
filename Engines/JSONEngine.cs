@@ -34,7 +34,7 @@ namespace Week4StructuredText.Engines
                         {
                             sw.WriteLine($"Processed at: {DateTime.Now}");
                             sw.WriteLine();
-                            sw.Write(newStudent.ReturnString());
+                            sw.Write(newStudent.ToString());
                         }
                     }
                 }

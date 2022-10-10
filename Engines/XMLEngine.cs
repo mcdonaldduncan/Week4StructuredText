@@ -35,7 +35,7 @@ namespace Week4StructuredText.Engines
                         {
                             sw.WriteLine($"Processed at: {DateTime.Now}");
                             sw.WriteLine();
-                            sw.Write(marketInventory.ReturnString());
+                            sw.Write(marketInventory.ToString());
                         }
                     }
                 }
