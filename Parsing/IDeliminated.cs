@@ -6,6 +6,5 @@ namespace Week4StructuredText
         public string Delimiter { get; set; }
         public string FilePath { get; set; }
         public string Extension { get; set; }
-        public bool LoadError { get; set; }
     }
 }

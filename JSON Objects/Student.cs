@@ -23,7 +23,6 @@ namespace Week4StructuredText.Objects
 
         public override string ToString()
         {
-
             sb.Append($"Name: {LastName}, {FirstName}\n");
             sb.Append(IsEnrolled ? "Student is currently enrolled.\n" : "Student is not enrolled.\n");
             sb.Append($"Student enrolled for {YearsEnrolled} years\n");

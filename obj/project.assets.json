@@ -5,14 +5,10 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       }
     }
@@ -52,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dfmcd\\.nuget\\packages\\": {}
+    "C:\\Users\\dfmcd98\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\Week4StructuredText.csproj",
+      "projectUniqueName": "D:\\GitHubD\\Week4StructuredText\\Week4StructuredText.csproj",
       "projectName": "Week4StructuredText",
-      "projectPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\Week4StructuredText.csproj",
-      "packagesPath": "C:\\Users\\dfmcd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dfmcd\\Documents\\GitHub\\Week4StructuredText\\obj\\",
+      "projectPath": "D:\\GitHubD\\Week4StructuredText\\Week4StructuredText.csproj",
+      "packagesPath": "C:\\Users\\dfmcd98\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHubD\\Week4StructuredText\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dfmcd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dfmcd98\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -101,8 +97,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -111,7 +106,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
