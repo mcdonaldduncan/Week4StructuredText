@@ -26,8 +26,7 @@ namespace Week4StructuredText.Parsing
 
             foreach (var name in fileNames)
             {
-                filesToProcess.Add(CreateFiles(name));
-                
+                filesToProcess.Add(CreateFile(name));
             }
 
             if (hasErrors)
@@ -43,20 +42,15 @@ namespace Week4StructuredText.Parsing
             Engine engine;
 
             engine = new DelimiterEngine();
-            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == Constants.FileDelimiters.Pipe || x.Extension == Constants.FileDelimiters.CSV).ToList()));
+            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == FileDelimiters.Pipe || x.Extension == FileDelimiters.CSV).ToList()));
 
             engine = new JSONEngine();
-            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == Constants.FileExtensions.JSON).ToList()));
+            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == FileExtensions.JSON).ToList()));
 
             engine = new XMLEngine();
-            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == Constants.FileExtensions.XML).ToList()));
+            errors.AddRange(engine.ProcessFiles(filesToProcess.Where(x => x.Extension == FileExtensions.XML).ToList()));
 
-
-            if (!hasErrors)
-            {
-                Console.WriteLine("Process completed succesfully for all items!");
-            }
-            else
+            if (hasErrors)
             {
                 Console.WriteLine("Process exited with errors!");
                 foreach (var error in errors)
@@ -64,18 +58,23 @@ namespace Week4StructuredText.Parsing
                     Console.WriteLine($"Error: {error.ErrorMessage} Source: {error.Source}");
                 }
             }
+            else
+            {
+                Console.WriteLine("Process completed succesfully for all items!");
+            }
         }
 
         List<string> GetAllFiles()
         {
-            return Directory.GetFiles(Constants.directoryPath).Where(x => !x.EndsWith("_out.txt")).ToList();
+            return Directory.GetFiles(directoryPath).Where(x => !x.EndsWith("_out.txt")).ToList();
         }
 
         /// <summary>
         /// CreateFiles handles the creation of valid MyFile objects, adds an error if one is found
+        /// This could definitely be a MyFile constructor and it was at one point, moved it here to keep this logic in the same place
         /// </summary>
         /// <param name="fileName">string name for the file</param>
-        MyFile CreateFiles(string fileName)
+        MyFile CreateFile(string fileName)
         {
             MyFile file = new MyFile();
             if (fileName.EndsWith(FileExtensions.Pipe))
@@ -102,10 +101,9 @@ namespace Week4StructuredText.Parsing
             {
                 errors.Add(new Error($"Invalid File Extension, {fileName.Substring(fileName.LastIndexOf("."))} is not supported", $"{fileName}"));
             }
-            file.FilePath = Path.Combine(Constants.directoryPath, fileName);
+            file.FilePath = Path.Combine(directoryPath, fileName);
 
             return file;
         }
-
     }
 }

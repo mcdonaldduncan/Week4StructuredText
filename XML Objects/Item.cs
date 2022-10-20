@@ -6,12 +6,12 @@ namespace Week4StructuredText.XML_Objects
     public sealed class Item
     {
         [XmlElement("name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [XmlElement("price")]
-        public string Price { get; set; }
+        public string? Price { get; set; }
 
         [XmlElement("uom")]
-        public string UnitOfMeasurement { get; set; }
+        public string? UnitOfMeasurement { get; set; }
     }
 }

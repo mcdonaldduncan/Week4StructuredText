@@ -58,11 +58,11 @@ namespace Week4StructuredText.Engines
             }
             catch (IOException ioe)
             {
-                errors.Add(new Error(ioe.Message, ioe.Source));
+                errors.Add(new Error(ioe.Message, ioe.Source ?? "Unknown"));
             }
             catch (Exception e)
             {
-                errors.Add(new Error(e.Message, e.Source));
+                errors.Add(new Error(e.Message, e.Source ?? "Unknown"));
             }
 
             return errors;

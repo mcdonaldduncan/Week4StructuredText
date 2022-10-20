@@ -7,13 +7,13 @@ namespace Week4StructuredText.XML_Objects
     public sealed class Market
     {
         [XmlElement("item")]
-        public List<Item> Items { get; set; }
+        public List<Item>? Items { get; set; }
 
         private StringBuilder sb = new StringBuilder();
 
         public override string ToString()
         {
-            for (int i = 0; i < Items.Count; i++)
+            for (int i = 0; i < Items?.Count; i++)
             {
                 sb.Append($"Item#{i + 1}: {Items[i].Name} ==> {Items[i].Price}/{Items[i].UnitOfMeasurement}\n");
             }
